@@ -1,7 +1,7 @@
 {
   "name": "@djs/replit-utils",
   "description": "A collection of utilities for working with Replit",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "type": "module",
   "exports": {
     "./config": "./lib/config.ts"

@@ -1,3 +1,8 @@
+/**
+ * Get the config file from the path
+ * @param {string} path The path to the config file
+ * @returns {Promise<string>} The config file
+ */
 export async function getConfig(path: string): Promise<string> {
   const configFile = Bun.file(path);
   if (!configFile.exists()) {
@@ -7,12 +12,23 @@ export async function getConfig(path: string): Promise<string> {
   return await configFile.text();
 }
 
+/**
+ * Parse the config file
+ * @param {string} config The config file
+ * @returns {Promise<T>} The parsed config file
+ */
 export async function parseConfig<T extends object>(
   config: string
 ): Promise<T> {
   return Promise.resolve(Bun.TOML.parse(config) as T);
 }
 
+/**
+ * Generate the config types
+ * @param {T} config The config file
+ * @param {string} moduleName The name of the module
+ * @returns {Promise<string>} The generated types
+ */
 export async function generateConfigTypes<T extends object>(
   config: T,
   moduleName: string
@@ -26,6 +42,10 @@ export async function generateConfigTypes<T extends object>(
   return types;
 }
 
+/**
+ * Get the replit config
+ * @returns {Promise<{config: T; types: string}>} The replit config
+ */
 export async function replitConfig<T extends object>(): Promise<{
   config: T;
 }> {

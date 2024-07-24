@@ -1,4 +1,10 @@
 /**
+ * This module is used to get the config file from the path and parse it.
+ *
+ * @module config
+ */
+
+/**
  * Get the config file from the path
  * @param {string} path The path to the config file
  * @returns {Promise<string>} The config file

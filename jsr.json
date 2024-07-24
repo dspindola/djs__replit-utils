@@ -1,0 +1,11 @@
+{
+  "name": "@djs/replit-utils",
+  "version": "0.1.0",
+  "exports": {
+    "./config": "./lib/config.ts"
+  },
+  "publish": {
+    "include": ["jsr.json", "README.md", "lib/**/*.ts"],
+    "exclude": ["lib/**/*.test.ts", "lib/**/*.test.tsx"]
+  }
+}
